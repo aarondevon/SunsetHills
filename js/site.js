@@ -33,10 +33,6 @@ const findSolution = () => {
   return solutionArray;
 };
 
-const addComas = () => {
-
-};
-
 const populateRandomNumbers = () => {
   for (let index = 0; index < numInputs.length; index++) {
     let randomNumber = Math.floor(Math.random() * 10 + 1);
