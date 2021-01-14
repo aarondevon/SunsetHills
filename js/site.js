@@ -10,7 +10,6 @@ const parseInputToNum = () => {
 
 const findSolution = () => {
   const numberArray = parseInputToNum();
-  console.log(numberArray);
   const solutionArray = [];
   let bigNum = numberArray[0];
   
@@ -62,7 +61,7 @@ const printSolution = () => {
     output.innerHTML = outPutHTML;
 };
 
-window.onload = populateRandomNumbers();
+document.onload = populateRandomNumbers();
 
 generateNumbers.addEventListener('click', populateRandomNumbers);
 
