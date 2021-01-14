@@ -23,9 +23,14 @@ const findSolution = () => {
 
     // Check number size
     numberArray.forEach(num => {
+
       if (num > bigNum) {
         solutionArray.push(num);
         bigNum = num;
+      } else if (num <= 0) {
+        solutionArray.length = 0;
+        solutionArray.push('<p class="error">Numbers must be greater than zero.</p>');
+        return;
       }
     })
 
@@ -47,11 +52,15 @@ const populateRandomNumbers = () => {
 const printSolution = () => {
   output.innerHTML = '';
   const solution = findSolution();
-  let outPutHTML = '<p>[';
+
+    let outPutHTML = '<p>[';
     solution.forEach(result => {
-      output.innerHTML += `${result}, `;
+      output.innerHTML += `${result} `;
     })
     outPutHTML += ']</p>'
+
+
+
 };
 
 window.onload = populateRandomNumbers();
