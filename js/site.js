@@ -3,9 +3,6 @@ const numInputs = document.querySelectorAll('.numInput');
 const output = document.querySelector('#output');
 const generateNumbers = document.querySelector('#generate-numbers')
 
-
-
-
 // parse inputs to num and return results as array
 const parseInputToNum = () => {
   return [...numInputs].map(index => parseInt(index.value));
@@ -52,15 +49,17 @@ const populateRandomNumbers = () => {
 const printSolution = () => {
   output.innerHTML = '';
   const solution = findSolution();
-
-    let outPutHTML = '<p>[';
+  let outPutHTML = '';
+  if (solution.length > 1) {
+    outPutHTML = '<p>[ ';
     solution.forEach(result => {
-      output.innerHTML += `${result} `;
+      outPutHTML += `${result}, `;
     })
     outPutHTML += ']</p>'
-
-
-
+  } else {
+    outPutHTML = solution[0];
+  }
+    output.innerHTML = outPutHTML;
 };
 
 window.onload = populateRandomNumbers();
