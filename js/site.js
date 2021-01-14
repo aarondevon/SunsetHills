@@ -21,23 +21,13 @@ const findSolution = () => {
   // always see the sunset
   solutionArray.push(numberArray[0]);
 
-
-  for (let index = 0; index < numberArray.length; index++) {
-    if (numberArray[index] > bigNum) {
-      solutionArray.push(numberArray[index]);
-      bigNum = numberArray[index];
-    }
-  }
-
-    // numberArray.forEach(num1 => {
-    //   numberArray.forEach(num2 => {
-
-    //     // Check sum
-    //     if (num1 + num2 === parseInt(sum.value)) {
-    //       solutionArray.push(`${num1} + ${num2} = ${sum.value}`);
-    //     }
-    //   })
-    // })
+    // Check number size
+    numberArray.forEach(num => {
+      if (num > bigNum) {
+        solutionArray.push(num);
+        bigNum = num;
+      }
+    })
 
   return solutionArray;
 };
@@ -48,7 +38,7 @@ const addComas = () => {
 
 const populateRandomNumbers = () => {
   for (let index = 0; index < numInputs.length; index++) {
-    let randomNumber = Math.floor(Math.random() * 9 + 1);
+    let randomNumber = Math.floor(Math.random() * 10 + 1);
     numInputs[index].value = randomNumber;
     
   }
